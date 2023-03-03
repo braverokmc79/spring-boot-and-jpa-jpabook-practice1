@@ -31,7 +31,7 @@ public class Category {
 
 
     /** 같은 엔티티 셀프  */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
     private  Category parent;
 
@@ -39,5 +39,11 @@ public class Category {
     @OneToMany(mappedBy ="parent" )
     private List<Category> child=new ArrayList<>();
 
+
+    //== 연관관계 메서드 ==//
+    public void adddChildCateogy(Category child){
+        this.child.add(child);
+        child.setParent(this);
+    }
 
 }
