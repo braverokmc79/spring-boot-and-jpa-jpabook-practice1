@@ -1,5 +1,7 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.service.MemberService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JpabookApplication {
 
 	public static void main(String[] args) {
+
+
 		SpringApplication.run(JpabookApplication.class, args);
 	}
 
