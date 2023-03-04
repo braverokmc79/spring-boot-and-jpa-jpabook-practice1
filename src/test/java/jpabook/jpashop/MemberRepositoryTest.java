@@ -30,7 +30,7 @@ public class MemberRepositoryTest {
             member.setName("memberA");
 
             //when
-               memberRepository.save(member);
+            memberRepository.save(member);
             Member findMember =memberRepository.findOne(member.getId());
 
             //then
