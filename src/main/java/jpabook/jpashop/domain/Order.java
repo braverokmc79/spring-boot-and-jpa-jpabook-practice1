@@ -1,7 +1,9 @@
 package jpabook.jpashop.domain;
 
 import jdk.jfr.Timestamp;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.aspectj.weaver.ast.Or;
 import org.hibernate.annotations.Comment;
@@ -15,6 +17,8 @@ import java.util.List;
 @Table(name="orders")
 @Getter
 @Setter
+//Order 객체 생성시 createOrder 메소들 이용하여 생성
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id
@@ -92,6 +96,7 @@ public class Order {
     //===비즈니스 로직 ==//
     /** 주문 취소 */
     public void cancel(){
+        //데이터만 바뀌면 JPA 가 더티 체킹으로 알아서 update 처리를 해준다.
         if(delivery.getStatus()==DeliveryStatus.COMP){
             throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
         }
