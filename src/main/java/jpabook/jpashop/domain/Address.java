@@ -19,7 +19,6 @@ public class Address {
 
     //함부로 new 로 생성처리 하면 안된다.
     protected Address() {
-
     }
 
     public Address(String city, String street, String zipcode) {
