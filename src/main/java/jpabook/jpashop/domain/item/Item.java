@@ -4,6 +4,7 @@ import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.domain.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public abstract class Item {
         }
         this.stockQuantity =restStock;
     }
-
 
 
 }

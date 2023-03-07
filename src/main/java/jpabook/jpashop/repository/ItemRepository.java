@@ -22,6 +22,7 @@ public class ItemRepository {
         }else{
             //item.getId()  있으면 업데이트 의미라 생각
             em.merge(item);
+            em.flush();
         }
     }
 
